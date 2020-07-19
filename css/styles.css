@@ -1,19 +1,5 @@
 
 
-@font-face {
-  font-family: 'Poppins';
-  src: url(../fonts/Poppins-SemiBold.ttf);
-}
-@font-face {
-  font-family: 'OpenSans';
-  src: url(../fonts/OpenSans-Regular.ttf);
-}
-@font-face {
-  font-family: 'OpenSansBold';
-  src: url(../fonts/OpenSans-SemiBold.ttf);
-}
-
-
 :root {
   --primaryColor: hsl(322, 100%, 66%);
   --veryPaleCyan:  hsl(193, 100%, 96%);
@@ -38,7 +24,8 @@
 
 body {
   font-size: var(--fontSize);
-  font-family: 'OpenSans', Verdana, sans-serif;
+  font-family: 'Open Sans', Verdana, sans-serif;
+  color: var(--textColor);
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -135,6 +122,8 @@ img {
 
 .main {
   padding: 3em 0;
+
+  margin-bottom: 10em;
 }
 
 .card {
@@ -156,12 +145,37 @@ img {
 
 
 
+/* CARD STARTED */
+
+.card-started{
+  display: block;
+  margin: -5em auto;
+  padding: 3em 0;
+  background-color: #fff;
+
+  position: relative;
+}
+
+.card-started-title {
+  margin-bottom: 2em;
+  font-size: 1.2em;
+}
+
+.card-started .btn {
+  background-color: var(--primaryColor);
+  padding: 1em 4em;
+  font-size: .9em;
+  color: var(--textColorAlt);
+}
+
+
+
 
 /* FOOTER */
 
 .footer {
   background-color: var(--veryDarkCyan);
-  padding:2em 0;
+  padding:10em 0 2em 0;
   color: var(--textColorAlt);
 }
 
@@ -171,12 +185,52 @@ img {
 
 .footer__contact img {
   width: 200px;
-  margin-bottom: 1em;
+  margin-bottom: 2.2em;
 }
 
 .footer__contact p {
   margin-bottom: 1em;
 }
+
+.footer__contact--location,
+.footer__contact--phone,
+.footer__contact--email {
+  position: relative;
+  padding-left: 2em;
+}
+
+.footer__contact--location::before,
+.footer__contact--phone::before,
+.footer__contact--email::before  {
+  content: "";
+  position: absolute;
+  top: .2em;
+  left: 0;
+  width: 1em;
+  height: 2em;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  /*border: 1px solid red;*/
+}
+
+.footer__contact--location::before {
+  background-image: url(../images/icon-location.svg);
+}
+
+
+
+.footer__contact--phone::before {
+  background-image: url(../images/icon-phone.svg);
+}
+
+
+.footer__contact--email::before {
+  background-image: url(../images/icon-email.svg);
+}
+
+
+
+
 
 
 .footer a {
@@ -186,6 +240,22 @@ img {
   margin-bottom: 1em;
 }
 
+.footer__social {
+  display: flex;
+  justify-content: center;
+}
+
+.footer__social a {
+  margin: 0 .5em;
+  border: 2px solid white;
+  border-radius: 50%;
+  width: 2em;
+  height: 2em;
+  text-align: center;
+  line-height: calc(2em - 2px);
+  display: block;
+}
+
 .footer__copy {
   text-align: center;
 }
@@ -193,6 +263,12 @@ img {
 
 
 @media screen and (min-width: 960px) {
+
+  /* TOP */
+
+  .top {
+    background-image: url(../images/bg-hero-desktop.svg);
+  }
 
   /* HEADER */
 
@@ -212,6 +288,12 @@ img {
 
   .banner__text {
     text-align: left;
+  }
+
+  /* MAIN */
+
+  .main {
+    margin-bottom: 7em;
   }
 
 
@@ -234,6 +316,13 @@ img {
 
   .card__content p {
     color: var(--secondTextColor);
+  }
+
+  /* CARD STARTED */
+
+  .card-started {
+    max-width: 50%;
+    display: block;
   }
 
 
